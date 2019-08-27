@@ -6,7 +6,7 @@ const [location, setLocation] = createSignal(window.location.pathname);
 
 const browserHistory = history.createBrowserHistory();
 
-browserHistory.listen(e => {
+browserHistory.listen((e) => {
   setLocation(e.pathname);
 });
 

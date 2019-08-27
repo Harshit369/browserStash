@@ -1,22 +1,15 @@
-import '#/effects/protected-routes';
-import { location, Route, RouteSwitch } from '#/router';
-import { Show } from 'solid-js/dom';
+import Header from '#/components/header';
+import { Route, RouteSwitch } from '#/router';
 import HomeRoute from './home';
-import LoginRoute from './login';
 
 function Routes() {
   return (
     <div>
-      <Show when={(void 0, ['/', '/login'].includes(location()))}>
-        <div />
-      </Show>
+      <Header />
 
       <RouteSwitch>
         <Route path="/">
           <HomeRoute />
-        </Route>
-        <Route path="/login">
-          <LoginRoute />
         </Route>
       </RouteSwitch>
     </div>
