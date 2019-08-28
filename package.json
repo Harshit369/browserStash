@@ -29,8 +29,10 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "await-here": "^2.1.1",
     "emotion": "^10.0.14",
     "history": "^4.9.0",
+    "nanoid": "^2.0.4",
     "rxjs": "^6.5.2",
     "solid-js": "^0.10.1",
     "spinkit": "^1.2.5"

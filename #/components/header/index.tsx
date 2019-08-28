@@ -1,31 +1,38 @@
-import { history } from '#/router';
 import { css } from 'emotion';
 
-const styles = css`
-  text-decoration: none;
-  font-size: 28px;
-  font-weight: 600;
-  transition: all 0.5s ease-in-out;
-  transform-origin: top left;
-  will-change: transform;
-  position: fixed;
-  top: 180px;
-  left: calc(50% - 100px);
+const wrapperStyles = css`
+  height: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
 `;
 
-function Header() {
-  return (
-    <a
-      href="/"
-      onClick={(e) => {
-        e.preventDefault();
+const leftInfoWrapperStyles = css`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
 
-        history.push('/');
-      }}
-      className={styles}
-    >
-      Pockeymon
-    </a>
+const rightInfoWrapperStyles = css`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+`;
+
+interface Props {
+  leftInfo: any;
+  rightInfo: any;
+}
+
+function Header(props: Props) {
+  return (
+    <div className={wrapperStyles}>
+      <div className={leftInfoWrapperStyles}>{props.leftInfo}</div>
+      <div className={rightInfoWrapperStyles}>{props.rightInfo}</div>
+    </div>
   );
 }
 
