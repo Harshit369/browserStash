@@ -1,15 +1,21 @@
 import { createState } from 'solid-js';
 
 export type ThemeTypes = 'light' | 'dark';
-export type Theme = any;
+export interface Theme {
+  header: string;
+  primary: string;
+  [k: string]: string;
+}
 
 const defaultTheme: ThemeTypes = 'light';
 
 const themes: Record<ThemeTypes, Theme> = {
   dark: {
+    header: '#eee',
     primary: '',
   },
   light: {
+    header: '#eee',
     primary: '',
   },
 };

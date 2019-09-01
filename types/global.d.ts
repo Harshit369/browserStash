@@ -1,4 +1,1 @@
-declare module '*.js' {
-  var a: any;
-  export = a;
-}
+declare module 'ace-builds/src-noconflict/ace' {}

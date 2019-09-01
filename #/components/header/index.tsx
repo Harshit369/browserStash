@@ -1,12 +1,15 @@
+import { theme } from '#/theme';
 import { css } from 'emotion';
 
 const wrapperStyles = css`
-  height: 32px;
+  height: 56px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
+  background-color: ${theme.header};
+  padding: 8px 16px;
 `;
 
 const leftInfoWrapperStyles = css`
