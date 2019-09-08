@@ -26,8 +26,8 @@ const rightInfoWrapperStyles = css`
 `;
 
 interface Props {
-  leftInfo: any;
-  rightInfo: any;
+  leftInfo: JSX.Element;
+  rightInfo: JSX.Element;
 }
 
 function Header(props: Props) {

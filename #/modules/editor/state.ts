@@ -1,8 +1,12 @@
+import { Editor } from '#/interfaces';
 import { createState } from 'solid-js';
 import './effects';
 
-const initialState: Record<string, any> = {};
+const initialState: Editor = {
+  mode: 'ace/theme/monokai',
+  theme: 'ace/mode/javascript',
+};
 
-const [editorState, setEditorState] = createState(initialState);
+const [editorState, updateEditor] = createState(initialState);
 
-export { editorState, setEditorState };
+export { editorState, updateEditor };

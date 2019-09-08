@@ -7,3 +7,8 @@ export interface Snippet {
   tags: [];
   languageMode: string;
 }
+
+export interface Editor {
+  mode: string;
+  theme: string;
+}

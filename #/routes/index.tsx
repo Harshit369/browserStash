@@ -1,4 +1,4 @@
-import Snippet from '#/routes/snippet';
+import Snippet from '#/routes/editor';
 import SnippetList from '#/routes/snippetList';
 import { css } from 'emotion';
 

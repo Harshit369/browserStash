@@ -1,15 +1,13 @@
-import { afterEffects } from 'solid-js';
+import { Snippet } from '#/interfaces';
 
 type intrinsicProps = JSX.HTMLAttributes<HTMLDivElement>;
 
 interface externalProps {
-  initializeEditor: () => void;
+  snippet: Snippet;
 }
 
 type Props = intrinsicProps & externalProps;
 
-export default (props: Props) => {
-  afterEffects(props.initializeEditor);
-
+export default ({ snippet, ...props }: Props) => {
   return <div id="editor" style={{ height: '100%' }} {...props}></div>;
 };
