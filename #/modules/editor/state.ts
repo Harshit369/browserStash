@@ -5,8 +5,9 @@ import './effects';
 const initialState: Editor = {
   mode: 'ace/theme/monokai',
   theme: 'ace/mode/javascript',
+  code: '',
 };
 
-const [editorState, updateEditor] = createState(initialState);
+const [editorState, updateEditor] = createState<Editor>(initialState);
 
 export { editorState, updateEditor };

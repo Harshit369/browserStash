@@ -9,6 +9,7 @@ export interface Snippet {
 }
 
 export interface Editor {
+  code: string;
   mode: string;
   theme: string;
 }

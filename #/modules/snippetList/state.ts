@@ -5,6 +5,7 @@ interface State {
   list: Snippet[];
   searchString: string;
   selected?: Snippet;
+  new?: Snippet;
 }
 
 const initialState: State = {
@@ -12,6 +13,6 @@ const initialState: State = {
   searchString: '',
 };
 
-const [allSnippetState, updateAllSnippet] = createState(initialState);
+const [allSnippetState, updateAllSnippet] = createState<State>(initialState);
 
 export { allSnippetState, updateAllSnippet };
