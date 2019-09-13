@@ -2,7 +2,9 @@ import { css } from 'emotion';
 
 type intrinsicProps = JSX.HTMLAttributes<HTMLButtonElement>;
 
-type Props = intrinsicProps;
+type Props = intrinsicProps & {
+  initializeRef: intrinsicProps['forwardRef'];
+};
 
 const style = css`
   height: 32px;
@@ -15,9 +17,13 @@ const style = css`
   transition: background-color 0.25s ease-out 0s, color 0.25s ease-out 0s;
 `;
 
-const Button = ({ children, className, ...props }: Props) => {
+const Button = ({ children, className, initializeRef, ...props }: Props) => {
   return (
-    <button className={`${style} ${className}`} {...props}>
+    <button
+      className={`${style} ${className}`}
+      {...props}
+      forwardRef={initializeRef}
+    >
       {children}
     </button>
   );

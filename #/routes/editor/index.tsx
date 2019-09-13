@@ -19,11 +19,12 @@ function Snippet() {
     <div className={editorWrapperStyles}>
       <Header
         leftInfo={<div>BrowserStash</div>}
-        rightInfo={<div>BrowserStash</div>}
+        rightInfo={<div>{(void 0, editorState.session.code)}</div>}
       ></Header>
-      <Editor className={editorStyles} initializeEditor={initializeEditor}>
-        {(void 0, editorState.code)}
-      </Editor>
+      <Editor
+        className={editorStyles}
+        initializeEditor={initializeEditor}
+      ></Editor>
     </div>
   );
 }

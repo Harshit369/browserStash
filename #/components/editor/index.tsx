@@ -8,12 +8,14 @@ interface externalProps {
 
 type Props = intrinsicProps & externalProps;
 
-export default ({ children, ...props }: Props) => {
+export default (props: Props) => {
   afterEffects(props.initializeEditor);
 
+  const { children, ...rest } = props;
+
   return (
-    <div id="editor" style={{ height: '100%' }} {...props}>
-      {children}
+    <div id="editor" {...rest}>
+      {(void 0, props.children)}
     </div>
   );
 };

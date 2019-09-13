@@ -3,7 +3,6 @@ import Header from '#/components/header';
 import { addSnippet } from '#/modules/snippetList/pipeline';
 import { allSnippetState } from '#/modules/snippetList/state';
 import { css } from 'emotion';
-import { Match } from 'solid-js/types/dom';
 import Snippet from '../editor';
 
 const wrapperStyles = css`
@@ -20,7 +19,7 @@ function SnippetList() {
     <div className={wrapperStyles}>
       <Header
         leftInfo={<div>BrowserStash</div>}
-        rightInfo={<Button forwardRef={addSnippet}>Add</Button>}
+        rightInfo={<Button initializeRef={addSnippet}>Add</Button>}
       ></Header>
       <div className={listStyles}>
         {
@@ -30,9 +29,9 @@ function SnippetList() {
           }))
         }
       </div>
-      <Match when={(void 0, !!allSnippetState.new)}>
+      {/* <Show when={(void 0, !!allSnippetState.new)}>
         <div className={wrapperStyles}>new editor</div>
-      </Match>
+      </Show> */}
     </div>
   );
 }
