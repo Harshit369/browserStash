@@ -3,7 +3,8 @@ import Header from '#/components/header';
 import { addSnippet } from '#/modules/snippetList/pipeline';
 import { allSnippetState } from '#/modules/snippetList/state';
 import { css } from 'emotion';
-import Snippet from '../editor';
+import { For, Show } from 'solid-js/dom';
+import SnippetItem from './snippetItem';
 
 const wrapperStyles = css`
   width: 30%;
@@ -22,16 +23,16 @@ function SnippetList() {
         rightInfo={<Button initializeRef={addSnippet}>Add</Button>}
       ></Header>
       <div className={listStyles}>
-        {
-          (void 0,
-          allSnippetState.list.map(() => {
-            return <Snippet></Snippet>;
-          }))
-        }
+        <For
+          each={(void 0, allSnippetState.list)}
+          fallback={<div>No Snippet</div>}
+        >
+          {(snippet) => <SnippetItem>{(void 0, snippet.name)}</SnippetItem>}
+        </For>
       </div>
-      {/* <Show when={(void 0, !!allSnippetState.new)}>
+      <Show when={(void 0, !!allSnippetState.new)}>
         <div className={wrapperStyles}>new editor</div>
-      </Show> */}
+      </Show>
     </div>
   );
 }

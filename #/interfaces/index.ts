@@ -7,10 +7,9 @@ export interface Snippet {
   id: string;
   name: string;
   createdAt: number;
-  modifiedAt: number;
+  modifiedAt?: number;
   session: Session;
   tags: [];
-  languageMode: string;
 }
 
 export interface Editor {

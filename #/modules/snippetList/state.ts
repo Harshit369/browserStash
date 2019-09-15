@@ -4,7 +4,7 @@ import { createState } from 'solid-js';
 interface State {
   list: Snippet[];
   searchString: string;
-  selected?: Snippet;
+  open?: Snippet;
   new?: Snippet;
 }
 

@@ -17,14 +17,15 @@ const style = css`
   transition: background-color 0.25s ease-out 0s, color 0.25s ease-out 0s;
 `;
 
-const Button = ({ children, className, initializeRef, ...props }: Props) => {
+const Button = (props: Props) => {
+  const { children, className, initializeRef, ...rest } = props;
   return (
     <button
       className={`${style} ${className}`}
-      {...props}
+      {...rest}
       forwardRef={initializeRef}
     >
-      {children}
+      {(void 0, props.children)}
     </button>
   );
 };

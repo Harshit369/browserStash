@@ -11,7 +11,6 @@ export const initializeEditor = () => {
 };
 
 createEffect(() => {
-  debugger;
   const editor: AceAjax.Editor = (window as any).editor;
   if (!editor) {
     return;
